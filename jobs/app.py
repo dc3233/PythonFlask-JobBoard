@@ -47,23 +47,13 @@ def jobs():
     FROM job JOIN employer
         ON employer.id = job.employer_id
     """
-    #jobs = execute_sql('SELECT job.id, job.title, job.description, job.salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id')
-    jobs = execute_sql(query)
+    jobs = execute_sql('SELECT job.id, job.title, job.description, job.salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id')
+    #jobs = execute_sql(query)
     return render_template('index.html', jobs=jobs)
+
 
 @app.route('job/<job_id>')
 def job(job_id):
-    query = """
-    SELECT
-        job.id
-        ,job.title
-        ,job.description
-        ,job.salary
-        ,employer.id as employer_id
-        ,employer.name as employer_name
-    FROM job JOIN employer
-        ON employer.id = job.employer_id
-    WHERE job.id = ?
-    """
+    query = 'SELECT job.id ,job.title ,job.description ,job.salary ,employer.id as employer_id ,employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id WHERE job.id = ?'
     job = execute_sql(query, [job_id], single=True)
     return render_template('job.html', job=job)
