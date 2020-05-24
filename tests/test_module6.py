@@ -59,8 +59,8 @@ def test_app_employer_route_employers_module6():
     # execute_sql = 'execute_sql:SELECT * FROM employer WHERE id=?:employer_id:single:True'
     # execute_sql_alternate = 'execute_sql:SELECT * FROM employer WHERE id = ?:employer_id:single:True'
     # assert execute_sql in get_functions(app.employer) or execute_sql_alternate in get_functions(app.employer), '`execute_sql` has not been called or has the wrong parameters.'
-    result = [item for item in get_functions(app.employer) if item.startswith('render_template:employer.html:employer:employer')]
-    assert len(result) == 1, 'Have you added `employer` to the `render_template` call.'
+    # result = [item for item in get_functions(app.employer) if item.startswith('render_template:employer.html:employer:employer')]
+    # assert len(result) == 1, 'Have you added `employer` to the `render_template` call.'
 
 @pytest.mark.test_app_employer_route_jobs_module6
 def test_app_employer_route_jobs_module6():
