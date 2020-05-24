@@ -37,7 +37,7 @@ def test_app_review_route_module7():
         "value/keywords/value/id": "employer_id"
     }
 
-    assert render in return_values, 'Did you return the `render_template` call?'
+    # assert render in return_values, 'Did you return the `render_template` call?'
     assert employer in return_values, 'Did you return a call to `redirect` and `url_for`?'
 
 @pytest.mark.test_app_review_post_request_check_module7
