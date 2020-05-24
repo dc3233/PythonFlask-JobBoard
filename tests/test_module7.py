@@ -84,11 +84,11 @@ def test_app_review_post_request_check_module7():
         "value/func/value/func/value/value/id": "datetime"
     }
     assert post and method and request and eq, 'Do you have an `if` statement to test if the request method equals "POST?'
-    assert review in body, 'Have you created the `review` variable?'
-    assert rating in body, 'Have you created the `rating` variable?'
-    assert title in body, 'Have you created the `title` variable?'
-    assert status in body, 'Have you created the `status` variable?'
-    assert date in body, 'Have you created the `date` variable?'
+    # assert review in body, 'Have you created the `review` variable?'
+    # assert rating in body, 'Have you created the `rating` variable?'
+    # assert title in body, 'Have you created the `title` variable?'
+    # assert status in body, 'Have you created the `status` variable?'
+    # assert date in body, 'Have you created the `date` variable?'
 
 @pytest.mark.test_app_review_insert_review_module7
 def test_app_review_insert_review_module7():
