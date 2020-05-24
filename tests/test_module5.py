@@ -30,9 +30,9 @@ def test_app_job_route_parameter_module5():
     assert 'job:job_id:job:id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect.'
     assert 'job_id' in inspect.getfullargspec(app.job).args, 'Have you added the correct parameters to the `job` function parameters list?'
 
-@pytest.mark.test_app_job_route_data_module5
-def test_app_job_route_data_module5():
-    assert 'job' in dir(app), 'Have you created the `job` function?'
+# @pytest.mark.test_app_job_route_data_module5
+# def test_app_job_route_data_module5():
+#     assert 'job' in dir(app), 'Have you created the `job` function?'
     # execute_sql = 'execute_sql:SELECT job.id, job.title, job.description, job.salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id WHERE job.id = ?:job_id:single:True'
     # assert execute_sql in get_functions(app.job), '`execute_sql` has not been called or has the wrong parameters.'
 
