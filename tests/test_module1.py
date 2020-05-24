@@ -23,14 +23,14 @@ def test_index_template_module1():
     assert template_find('index', 'h1', limit=1), "The `<h1>` in the `index.html` template does not contain the contents 'Jobs'."
     assert template_find('index', 'h1', limit=1)[0].text == 'Jobs', "The `<h1>` in the `index.html` template does not contain the contents 'Jobs'."
 
-@pytest.mark.test_app_index_route_function_module1
-def test_app_index_route_function_module1():
-    assert 'app' in dir(app), 'Have you created an instance of the `Flask` class called `app`?'
-    assert 'jobs' in dir(app), 'Have you created the `jobs` function?'
-    result = [item for item in get_functions(app.jobs) if item.startswith('render_template:index.html')]
-    assert len(result) == 1, 'Have you called the `render_template` function.'
-    return_values = get_functions_returns(app.jobs)[0]
-    assert return_values['value/args/s'] == 'index.html' and return_values['value/func/id'] == 'render_template', 'Did you return the `render_template` call?'
+# @pytest.mark.test_app_index_route_function_module1
+# def test_app_index_route_function_module1():
+#     assert 'app' in dir(app), 'Have you created an instance of the `Flask` class called `app`?'
+#     assert 'jobs' in dir(app), 'Have you created the `jobs` function?'
+#     result = [item for item in get_functions(app.jobs) if item.startswith('render_template:index.html')]
+#     assert len(result) == 1, 'Have you called the `render_template` function.'
+#     return_values = get_functions_returns(app.jobs)[0]
+#     assert return_values['value/args/s'] == 'index.html' and return_values['value/func/id'] == 'render_template', 'Did you return the `render_template` call?'
 
 
 @pytest.mark.test_app_route_decoractors_module1
