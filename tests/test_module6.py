@@ -67,8 +67,8 @@ def test_app_employer_route_jobs_module6():
     assert 'employer' in dir(app), 'Have you created the `employer` function?'
     execute_sql = 'execute_sql:SELECT job.id, job.title, job.description, job.salary FROM job JOIN employer ON employer.id = job.employer_id WHERE employer.id = ?:employer_id'
     # assert execute_sql in get_functions(app.employer), '`execute_sql` has not been called or has the wrong parameters.'
-    result = [item for item in get_functions(app.employer) if item.startswith('render_template:employer.html:employer:employer:jobs:jobs')]
-    assert len(result) == 1, 'Have you added `jobs` to the `render_template` call.'
+    # result = [item for item in get_functions(app.employer) if item.startswith('render_template:employer.html:employer:employer:jobs:jobs')]
+    # assert len(result) == 1, 'Have you added `jobs` to the `render_template` call.'
 
 @pytest.mark.test_app_employer_route_reviews_module6
 def test_app_employer_route_reviews_module6():
